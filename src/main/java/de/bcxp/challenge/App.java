@@ -1,13 +1,18 @@
 package de.bcxp.challenge;
 
+import de.bcxp.challenge.repositories.CountryCsvRepository;
+import de.bcxp.challenge.repositories.CountryRepository;
 import de.bcxp.challenge.repositories.WeatherCsvRepository;
 import de.bcxp.challenge.repositories.WeatherRepository;
+import de.bcxp.challenge.service.CountryService;
 import de.bcxp.challenge.service.WeatherService;
 
 public final class App {
 
     public static WeatherRepository weatherRepository = new WeatherCsvRepository();
+    public static CountryRepository countryRepository = new CountryCsvRepository();
     public static WeatherService weatherService = new WeatherService();
+    public static CountryService countryService = new CountryService();
 
     /**
      * This is the main entry method of your program.
@@ -18,7 +23,7 @@ public final class App {
         var dayWithSmallestTempSpread = weatherService.findDayWithSmallestTempSpread();
         System.out.println("Day with smallest temperature spread: " + dayWithSmallestTempSpread.getDay());
 
-        String countryWithHighestPopulationDensity = "Some country"; // Your population density analysis function call …
-        System.out.printf("Country with highest population density: %s%n", countryWithHighestPopulationDensity);
+        var countryWithHighestPopulationDensity = countryService.findHighestPopulationDensity();
+        System.out.println("Country with highest population density: " + countryWithHighestPopulationDensity.getName());
     }
 }
