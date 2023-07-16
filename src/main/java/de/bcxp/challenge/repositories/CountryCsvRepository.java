@@ -8,6 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 
+/**
+ * A repository for countries. It reads the data from a CSV file.
+ */
 public class CountryCsvRepository implements CountryRepository {
 
     public static String PATH = "src/main/resources/de/bcxp/challenge/countries.csv";

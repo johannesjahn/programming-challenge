@@ -7,6 +7,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 
+/**
+ * A repository for weather days. It reads the data from a CSV file.
+ */
 public class WeatherCsvRepository implements WeatherRepository {
 
     public static String PATH = "src/main/resources/de/bcxp/challenge/weather.csv";

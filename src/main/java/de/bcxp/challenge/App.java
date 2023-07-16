@@ -7,6 +7,13 @@ import de.bcxp.challenge.repositories.WeatherRepository;
 import de.bcxp.challenge.service.CountryService;
 import de.bcxp.challenge.service.WeatherService;
 
+/**
+ * The main class of the application.
+ * This class is also responsible for wiring up the application.
+ * It uses static fields to provide the repositories and services to the other classes.
+ * Through this approach, the dependencies can be mocked in the tests.
+ * This is not a good practice, but it is sufficient for this challenge.
+ */
 public final class App {
 
     public static WeatherRepository weatherRepository = new WeatherCsvRepository();
@@ -15,7 +22,8 @@ public final class App {
     public static CountryService countryService = new CountryService();
 
     /**
-     * This is the main entry method of your program.
+     * The main method of the application.
+     *
      * @param args The CLI arguments passed
      */
     public static void main(String... args) {

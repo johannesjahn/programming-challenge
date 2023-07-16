@@ -2,16 +2,25 @@ package de.bcxp.challenge.models;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvCustomBindByName;
-import de.bcxp.challenge.utils.CustomIntegerConverter;
+import de.bcxp.challenge.utils.CustomLongConverter;
 
 public class Country {
 
+    /**
+     * The name of the country.
+     */
     @CsvBindByName(column = "Name")
     private String name;
 
-    @CsvCustomBindByName(column = "Population", converter = CustomIntegerConverter.class)
+    /**
+     * The population of the country.
+     */
+    @CsvCustomBindByName(column = "Population", converter = CustomLongConverter.class)
     private long population;
 
+    /**
+     * The area of the country in square kilometers.
+     */
     @CsvBindByName(column = "Area (km²)")
     private long area;
 

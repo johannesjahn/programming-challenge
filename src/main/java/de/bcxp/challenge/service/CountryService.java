@@ -8,6 +8,12 @@ public class CountryService {
 
     private final CountryRepository countryRepository = App.countryRepository;
 
+    /**
+     * Returns the country with the highest population density.
+     * The population density is the ratio of population to area.
+     *
+     * @return the country with the highest population density
+     */
     public Country findHighestPopulationDensity() {
 
         var countries = countryRepository.findAll();
