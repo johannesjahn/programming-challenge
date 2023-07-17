@@ -149,3 +149,27 @@ Ideally you provide your solutions as Git repository with
 appropriate commits and descriptions. If you have a GitLab.com
 or GitHub account, please feel free to publish your solution
 there.
+
+== Comments on solution
+
+Generally this project follows the file structure which can be seen in MVC projects.
+The files in the model package contain the data models that are used to represent the structure of data coming from the CSV.
+The repository package contains the interfaces and implementations of data accessors.
+The service package contains the business logic of the application.
+The utils package contains utility classes that are used throughout the application.
+In our case, only a utility for a special case of CSV parsing is implemented.
+Lastly, the App class is the entry point of the application.
+It is used to start the application and call the logic from the services and to print the results of the challenges.
+Furthermore, the App class is also used to provide the dependencies (like the repositories and services).
+This is done so the components can be mocked in the tests.
+
+The file structure in the test package is mirrors the structure of the main package.
+The tests are written using Hamcrest, JUnit 5 and Mockito.
+Furthermore, the tests only test the business logic of their component and not the dependencies.
+To test the application as a whole integration tests could be used.
+
+=== Added dependencies
+
+Hamcrest has been added to make the tests more readable and error messages more meaningful.
+Mockito has been added to mock the dependencies of the components.
+OpenCSV has been added to parse the CSV files in a standardized manner.
